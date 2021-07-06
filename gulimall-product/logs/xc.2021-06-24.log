@@ -1,0 +1,54 @@
+2021-06-24 14:31:51.722 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Starting GulimallProductApplicationTests using Java 1.8.0_261 on WIN-7BAPFQ24MHS with PID 11316 (started by EDZ in E:\STUDY\gulimall\gulimall-product)
+2021-06-24 14:31:51.723 [main] INFO  c.f.g.p.GulimallProductApplicationTests - The following profiles are active: dev
+2021-06-24 14:31:51.723 [main] DEBUG o.s.boot.SpringApplication - Loading source class com.furenqiang.gulimall.product.GulimallProductApplication
+2021-06-24 14:31:51.784 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1522d8a0
+2021-06-24 14:31:53.298 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=22ec32a9-c406-3286-82c5-961206266523
+2021-06-24 14:31:57.203 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-06-24 14:31:57.434 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 72 mappings in 'requestMappingHandlerMapping'
+2021-06-24 14:31:57.578 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-06-24 14:31:57.603 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-06-24 14:31:57.887 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-24 14:31:58.249 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-24 14:32:00.166 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-06-24 14:32:00.336 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Started GulimallProductApplicationTests in 10.946 seconds (JVM running for 12.788)
+2021-06-24 14:32:00.339 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-06-24 14:32:00.342 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-24 14:32:01.332 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@1522d8a0, started on Thu Jun 24 14:31:51 CST 2021
+2021-06-24 14:32:01.344 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-24 14:32:01.363 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-24 14:37:39.754 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Starting GulimallProductApplicationTests using Java 1.8.0_261 on WIN-7BAPFQ24MHS with PID 13268 (started by EDZ in E:\STUDY\gulimall\gulimall-product)
+2021-06-24 14:37:39.757 [main] INFO  c.f.g.p.GulimallProductApplicationTests - The following profiles are active: dev
+2021-06-24 14:37:39.757 [main] DEBUG o.s.boot.SpringApplication - Loading source class com.furenqiang.gulimall.product.GulimallProductApplication
+2021-06-24 14:37:39.801 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@b6b1987
+2021-06-24 14:37:41.206 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=22ec32a9-c406-3286-82c5-961206266523
+2021-06-24 14:37:45.066 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-06-24 14:37:45.322 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 72 mappings in 'requestMappingHandlerMapping'
+2021-06-24 14:37:45.483 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-06-24 14:37:45.520 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-06-24 14:37:45.771 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-24 14:37:46.125 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-24 14:37:48.030 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-06-24 14:37:48.196 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Started GulimallProductApplicationTests in 11.157 seconds (JVM running for 13.464)
+2021-06-24 14:37:48.199 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-06-24 14:37:48.202 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-24 14:37:49.024 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@b6b1987, started on Thu Jun 24 14:37:39 CST 2021
+2021-06-24 14:37:49.033 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-24 14:37:49.052 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-24 14:39:01.203 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Starting GulimallProductApplicationTests using Java 1.8.0_261 on WIN-7BAPFQ24MHS with PID 596 (started by EDZ in E:\STUDY\gulimall\gulimall-product)
+2021-06-24 14:39:01.204 [main] INFO  c.f.g.p.GulimallProductApplicationTests - The following profiles are active: dev
+2021-06-24 14:39:01.205 [main] DEBUG o.s.boot.SpringApplication - Loading source class com.furenqiang.gulimall.product.GulimallProductApplication
+2021-06-24 14:39:01.269 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@b6b1987
+2021-06-24 14:39:02.983 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=22ec32a9-c406-3286-82c5-961206266523
+2021-06-24 14:39:06.988 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-06-24 14:39:07.229 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 72 mappings in 'requestMappingHandlerMapping'
+2021-06-24 14:39:07.393 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-06-24 14:39:07.457 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-06-24 14:39:07.993 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-24 14:39:08.363 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-24 14:39:10.364 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-06-24 14:39:10.543 [main] INFO  c.f.g.p.GulimallProductApplicationTests - Started GulimallProductApplicationTests in 12.205 seconds (JVM running for 14.531)
+2021-06-24 14:39:10.545 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-06-24 14:39:10.550 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-24 14:39:11.269 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@b6b1987, started on Thu Jun 24 14:39:01 CST 2021
+2021-06-24 14:39:11.278 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-24 14:39:11.305 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
