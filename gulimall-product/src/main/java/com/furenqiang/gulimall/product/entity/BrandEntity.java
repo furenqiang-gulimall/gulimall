@@ -2,10 +2,14 @@ package com.furenqiang.gulimall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
+import com.furenqiang.common.valid.AddGroup;
+import com.furenqiang.common.valid.ListValue;
+import com.furenqiang.common.valid.UpdateGroup;
 import lombok.Data;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * 品牌
@@ -23,10 +27,12 @@ public class BrandEntity implements Serializable {
 	 * 品牌id
 	 */
 	@TableId
+    @NotNull(groups = {UpdateGroup.class})
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
+	@NotNull(groups = {UpdateGroup.class})
 	private String name;
 	/**
 	 * 品牌logo地址
@@ -35,10 +41,12 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 介绍
 	 */
+	@NotEmpty(groups = {UpdateGroup.class})
 	private String descript;
 	/**
 	 * 显示状态[0-不显示；1-显示]
 	 */
+	@ListValue(vals = {0,1},groups = {AddGroup.class})
 	private Integer showStatus;
 	/**
 	 * 检索首字母

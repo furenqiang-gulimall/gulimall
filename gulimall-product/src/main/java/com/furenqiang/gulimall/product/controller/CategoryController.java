@@ -1,20 +1,18 @@
 package com.furenqiang.gulimall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.furenqiang.common.utils.R;
+import com.furenqiang.gulimall.product.entity.CategoryEntity;
+import com.furenqiang.gulimall.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.furenqiang.gulimall.product.entity.CategoryEntity;
-import com.furenqiang.gulimall.product.service.CategoryService;
-import com.furenqiang.common.utils.PageUtils;
-import com.furenqiang.common.utils.R;
+import java.util.Arrays;
+import java.util.List;
+
+//import org.apache.shiro.authz.annotation.RequiresPermissions;
 
 
 
@@ -32,14 +30,14 @@ public class CategoryController {
     private CategoryService categoryService;
 
     /**
-     * 列表
+     * 列表,以树形结构展示
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list/tree")
     //@RequiresPermissions("product:category:list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
+    public R listWithTree(){
+        List<CategoryEntity> tree = categoryService.listWithTree();
 
-        return R.ok().put("page", page);
+        return R.ok().put("data", tree);
     }
 
 
@@ -54,7 +52,7 @@ public class CategoryController {
         return R.ok().put("category", category);
     }
 
-    /**
+    /**queryPage
      * 保存
      */
     @RequestMapping("/save")
@@ -71,7 +69,18 @@ public class CategoryController {
     @RequestMapping("/update")
     //@RequiresPermissions("product:category:update")
     public R update(@RequestBody CategoryEntity category){
-		categoryService.updateById(category);
+        categoryService.updateById(category);
+
+        return R.ok();
+    }
+
+    /**
+     * 修改
+     */
+    @RequestMapping("/update/sort")
+    //@RequiresPermissions("product:category:update")
+    public R updateSort(@RequestBody CategoryEntity[] category){
+        categoryService.updateBatchById(Arrays.asList(category));
 
         return R.ok();
     }
@@ -82,7 +91,7 @@ public class CategoryController {
     @RequestMapping("/delete")
     //@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
+		categoryService.removeMenusByIds(Arrays.asList(catIds));
 
         return R.ok();
     }

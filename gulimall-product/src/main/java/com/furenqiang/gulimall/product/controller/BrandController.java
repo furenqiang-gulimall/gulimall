@@ -1,21 +1,19 @@
 package com.furenqiang.gulimall.product.controller;
 
+import com.furenqiang.common.utils.PageUtils;
+import com.furenqiang.common.utils.R;
+import com.furenqiang.common.valid.AddGroup;
+import com.furenqiang.common.valid.UpdateGroup;
+import com.furenqiang.gulimall.product.entity.BrandEntity;
+import com.furenqiang.gulimall.product.service.BrandService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.furenqiang.gulimall.product.entity.BrandEntity;
-import com.furenqiang.gulimall.product.service.BrandService;
-import com.furenqiang.common.utils.PageUtils;
-import com.furenqiang.common.utils.R;
-
 
 
 /**
@@ -59,7 +57,7 @@ public class BrandController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand){
 		brandService.save(brand);
 
         return R.ok();
@@ -70,7 +68,7 @@ public class BrandController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:brand:update")
-    public R update(@RequestBody BrandEntity brand){
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
         return R.ok();
