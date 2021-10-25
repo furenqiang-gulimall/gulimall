@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyOSSClient {
 
-    private OSS oss=null;
+    private OSS oss = null;
 
     @Value("${alibaba.cloud.access-key}")
     private String accessKeyId;
@@ -24,9 +24,9 @@ public class MyOSSClient {
 
 
     public OSS getInstanceMyOSSClient() {
-        if(this.oss==null){
-            synchronized(OSS.class){
-                if(this.oss==null){
+        if (this.oss == null) {
+            synchronized (OSS.class) {
+                if (this.oss == null) {
                     return new OSSClientBuilder().build(this.endpoint, this.accessKeyId, this.accessKeySecret);
                 }
             }

@@ -6,8 +6,12 @@ import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
 import com.furenqiang.gulimall.thirdparty.config.MyOSSClient;
+import com.furenqiang.gulimall.thirdparty.utils.HttpUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -29,15 +34,18 @@ public class OssController {
     @Autowired
     MyOSSClient myOSSClient;
 
+    /**
+     * 第三方服务，阿里云对象存储接口
+     * */
     @RequestMapping("/getPolicy")
-    protected Map<String,String> getPolicy(HttpServletRequest request, HttpServletResponse response)
+    protected Map<String, String> getPolicy(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String bucket = myOSSClient.getBucket(); // 请填写您的 bucketname 。
         String host = "https://" + bucket + "." + myOSSClient.getEndpoint(); // host的格式为 bucketname.endpoint
         // callbackUrl为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
 //        String callbackUrl = "http://88.88.88.88:8888";
-        String dir = new SimpleDateFormat("yyyy-MM-dd").format(new Date())+"/";// 用户上传文件时指定的前缀。
+        String dir = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + "/";// 用户上传文件时指定的前缀。
 
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(myOSSClient.getEndpoint(), myOSSClient.getAccessKeyId(), myOSSClient.getAccessKeySecret());
@@ -71,5 +79,42 @@ public class OssController {
             ossClient.shutdown();
         }
         return null;
+    }
+
+    /**
+     * 第三方服务，给手机发送验证码功能
+     * */
+    @GetMapping("/sendCode")
+    public void sendCode(){
+        String host = "https://gyyyx2.market.alicloudapi.com";
+        String path = "/sms/smsSendLong";
+        String method = "POST";
+        String appcode = "20ca59e0b3164e529bd18533d3e1d659";
+        Map<String, String> headers = new HashMap<String, String>();
+        //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+        headers.put("Authorization", "APPCODE " + appcode);
+        Map<String, String> querys = new HashMap<String, String>();
+        querys.put("mobile", "15271122360");
+        querys.put("param", "**code**:161063,**minute**:5");
+        querys.put("smsSignId", "2e65b1bb3d054466b82f0c9d125465e2");
+        querys.put("templateId", "908e94ccf08b4476ba6c876d13f084ad");
+        Map<String, String> bodys = new HashMap<String, String>();
+        try {
+            /**
+             * 重要提示如下:
+             * HttpUtils请从
+             * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
+             * 下载
+             *
+             * 相应的依赖请参照
+             * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
+             */
+            HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+//            System.out.println(response.toString());
+            //获取response的body
+            System.out.println(EntityUtils.toString(response.getEntity()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
