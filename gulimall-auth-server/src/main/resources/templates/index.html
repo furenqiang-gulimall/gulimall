@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+<form action="login.html">
+    <input type="hidden" name="redirect_url" th:value="${url}" />
+    用户名：<input type="text" name="account"/>
+    密码：<input type="text" name="password"/>
+    手机号：<input type="text" name="phone"/>
+    验证码：<input type="text" name="code"/><a id="sendCode" href="">发送验证码</a>
+    <input type="submit" value="提交">
+</form>
+<script>
+    $(function () {
+        $("#sendCode").click(function () {
+            //给指定手机号发送验证码
+            //倒计时再次发送验证码
+        })
+        // function change() {
+        //
+        // }
+    })
+</script>
+</body>
+</html>
